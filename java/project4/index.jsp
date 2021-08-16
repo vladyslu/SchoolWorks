@@ -1,0 +1,19 @@
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<th style=\"background-color:green !important;\">
+<%= request.getAttribute("table") %>
+</th>
+</table>
+
+</body>
+</html>
