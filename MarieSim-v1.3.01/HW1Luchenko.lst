@@ -1,0 +1,70 @@
+     Assembly listing for: HW1Luchenko.mas
+                Assembled: Mon Sep 21 08:54:10 EDT 2020
+
+         |                           /Vladyslav Luchenko
+000 5000 |         INPUT             
+001 2021 |         STORE a           
+002 5000 |         INPUT             
+003 2022 |         STORE b           
+004 5000 |         INPUT             
+005 2023 |         STORE c           
+006 1021 |         LOAD a            
+007 2026 |         STORE Count       
+         |                          /first loop  
+008 1022 |  Loop   LOAD b            
+009 3025 |         ADD Sum           
+00A 6000 |         OUTPUT            
+00B 2025 |         STORE Sum         
+         |                          
+00C 1026 |         LOAD Count        
+00D 4027 |         SUBT One          
+00E 2026 |         STORE Count       
+00F 8800 |         SKIPCOND 800      
+010 9012 |         JUMP _Count       
+011 9008 |         JUMP Loop         
+         |                          /store c
+012 1023 |  _Count LOAD c            
+013 2026 |         STORE Count       
+         |                          /second loop
+014 1025 |  _Loop  LOAD Sum          
+015 3024 |         ADD z             
+016 2024 |         STORE z           
+017 6000 |         OUTPUT            
+018 1026 |         LOAD Count        
+019 4027 |         SUBT One          
+01A 2026 |         STORE Count       
+01B 8800 |         SKIPCOND 800      
+01C 901E |         JUMP End          
+01D 9014 |         JUMP _Loop        
+         |                          /result
+01E 1024 |  End    LOAD z            
+01F 6000 |         OUTPUT            
+020 7000 |         HALT              
+021 0000 |  a      DEC 0             
+022 0000 |  b      DEC 0             
+023 0000 |  c      DEC 0             
+024 0000 |  z      DEC 0             
+025 0000 |  Sum    DEC 0             
+026 0000 |  Count  DEC 0             
+027 0001 |  One    DEC 1             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          Count  |   026   | 007, 00C, 00E, 013, 018, 01A
+          End    |   01E   | 01C
+          Loop   |   008   | 011
+          One    |   027   | 00D, 019
+          Sum    |   025   | 009, 00B, 014
+          _Count |   012   | 010
+          _Loop  |   014   | 01D
+          a      |   021   | 001, 006
+          b      |   022   | 003, 008
+          c      |   023   | 005, 012
+          z      |   024   | 015, 016, 01E
+         --------------------------------------------------
+
+

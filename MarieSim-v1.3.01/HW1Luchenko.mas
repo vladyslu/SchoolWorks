@@ -1,0 +1,46 @@
+ /Vladyslav Luchenko
+ Input
+    Store   a
+    Input
+    Store   b
+    Input
+    Store   c
+    Load    a
+    Store   Count 
+/first loop  
+Loop,  Load    b
+    Add     Sum
+    Output  
+    Store   Sum
+
+    Load    Count
+    Subt    One
+    Store   Count
+    Skipcond 800
+    Jump    _Count
+    Jump    Loop
+/store c
+_Count, Load    c
+    Store   Count   
+/second loop
+_Loop,  Load    Sum
+    Add     z
+    Store   z    
+    Output  
+    Load    Count
+    Subt    One
+    Store   Count
+    Skipcond 800
+    Jump    End
+    Jump    _Loop
+/result
+End,    Load    z 
+    Output
+    Halt
+a,  Dec 0
+b,  Dec 0
+c,  Dec 0
+z,   Dec 0
+Sum,   Dec 0
+Count,  Dec 0
+One,    Dec 1

@@ -1,0 +1,91 @@
+     Assembly listing for: HW2Luchenko.mas
+                Assembled: Tue Oct 27 15:03:09 EDT 2020
+
+         |                              /Vladyslav Luchenko
+000 5000 |           INPUT               
+001 6000 |           OUTPUT              
+002 8800 |           SKIPCOND 800        
+003 9026 |           JUMP Zero           
+004 2029 |           STORE a             
+005 5000 |           INPUT               
+006 6000 |           OUTPUT              
+007 8800 |           SKIPCOND 800        
+008 9026 |           JUMP Zero           
+009 202A |           STORE b             
+00A 5000 |           INPUT               
+00B 6000 |           OUTPUT              
+00C 8800 |           SKIPCOND 800        
+00D 9026 |           JUMP Zero           
+00E 202B |           STORE c             
+         |                                 
+         |                              /first loop  
+00F 102E |  Loop     LOAD Count          
+         |                              
+010 3029 |           ADD a               
+011 202E |           STORE Count         
+         |                              
+012 102A |           LOAD b              
+013 402F |           SUBT One            
+014 202A |           STORE b             
+015 8800 |           SKIPCOND 800        
+016 9018 |           JUMP _Loop          
+017 900F |           JUMP Loop           
+         |                              /store c
+         |                               
+         |                               
+         |                              /second loop
+018 102D |  _Loop    LOAD newCount       
+019 302E |           ADD Count           
+01A 202D |           STORE newCount      
+         |                                      
+01B 102B |           LOAD c              
+01C 402F |           SUBT One            
+01D 202B |           STORE c             
+         |                              
+01E 8800 |           SKIPCOND 800        
+01F 9021 |           JUMP End            
+020 9018 |           JUMP _Loop          
+         |                              	
+         |                              	
+         |                              /result
+021 102C |  End      LOAD z              
+022 302D |           ADD newCount        
+023 202C |           STORE z             
+024 6000 |           OUTPUT              
+025 7000 |           HALT                
+         |                              
+026 1030 |  Zero     LOAD zero           
+027 6000 |           OUTPUT              
+028 7000 |           HALT                
+         |                              
+029 0000 |  a        DEC 0               
+02A 0000 |  b        DEC 0               
+02B 0000 |  c        DEC 0               
+         |                              
+02C 0000 |  z        DEC 0               
+02D 0000 |  newCount DEC 0               
+02E 0000 |  Count    DEC 0               
+02F 0001 |  One      DEC 1               
+030 0000 |  zero     DEC 0               
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ----------------------------------------------------
+          Symbol   | Defined | References 
+         ----------+---------+-------------------------------
+          Count    |   02E   | 00F, 011, 019
+          End      |   021   | 01F
+          Loop     |   00F   | 017
+          One      |   02F   | 013, 01C
+          Zero     |   026   | 003, 008, 00D
+          _Loop    |   018   | 016, 020
+          a        |   029   | 004, 010
+          b        |   02A   | 009, 012, 014
+          c        |   02B   | 00E, 01B, 01D
+          newCount |   02D   | 018, 01A, 022
+          z        |   02C   | 021, 023
+          zero     |   030   | 026
+         ----------------------------------------------------
+
+

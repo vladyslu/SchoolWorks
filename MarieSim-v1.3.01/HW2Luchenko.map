@@ -1,0 +1,16 @@
+ -------------------
+ Symbol   | Location
+ ---------+---------
+ Count    |   02E
+ End      |   021
+ Loop     |   00F
+ One      |   02F
+ Zero     |   026
+ _Loop    |   018
+ a        |   029
+ b        |   02A
+ c        |   02B
+ newCount |   02D
+ z        |   02C
+ zero     |   030
+

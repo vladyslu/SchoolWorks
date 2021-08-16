@@ -1,0 +1,21 @@
+ ----------------------
+ Symbol      | Location
+ ------------+---------
+ Count       |   046
+ End         |   03A
+ EndFunc     |   035
+ Loop        |   02C
+ Multiply    |   02B
+ One         |   047
+ Zero        |   037
+ a           |   03D
+ b           |   03E
+ c           |   03F
+ d           |   040
+ firstMulty  |   044
+ firstRes    |   042
+ secondMulty |   045
+ secondRes   |   043
+ z           |   041
+ zero        |   048
+

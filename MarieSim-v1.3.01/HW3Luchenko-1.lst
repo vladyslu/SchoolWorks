@@ -1,0 +1,123 @@
+     Assembly listing for: HW3Luchenko-1.mas
+                Assembled: Sun Nov 08 22:40:42 EST 2020
+
+         |                                    /Vladyslav Luchenko
+000 5000 |              INPUT                  
+001 6000 |              OUTPUT                 
+002 8800 |              SKIPCOND 800           
+003 9037 |              JUMP Zero              
+004 203D |              STORE a                
+005 5000 |              INPUT                  
+006 6000 |              OUTPUT                 
+007 8800 |              SKIPCOND 800           
+008 9037 |              JUMP Zero              
+009 203E |              STORE b                
+00A 5000 |              INPUT                  
+00B 6000 |              OUTPUT                 
+00C 8800 |              SKIPCOND 800           
+00D 9037 |              JUMP Zero              
+00E 203F |              STORE c                
+00F 5000 |              INPUT                  
+010 6000 |              OUTPUT                 
+011 8800 |              SKIPCOND 800           
+012 9037 |              JUMP Zero              
+013 2040 |              STORE d                
+         |                                       
+014 103D |              LOAD a                 
+015 2044 |              STORE firstMulty       
+016 103E |              LOAD b                 
+017 2045 |              STORE secondMulty      
+018 002B |              JNS Multiply           
+019 2042 |              STORE firstRes         
+01A 1048 |              LOAD zero              
+01B 2046 |              STORE Count            
+         |                                    
+01C 103F |              LOAD c                 
+01D 2044 |              STORE firstMulty       
+01E 1040 |              LOAD d                 
+01F 2045 |              STORE secondMulty      
+020 002B |              JNS Multiply           
+021 2043 |              STORE secondRes        
+022 1048 |              LOAD zero              
+023 2046 |              STORE Count            
+         |                                    
+         |                                    
+024 1042 |              LOAD firstRes          
+025 2044 |              STORE firstMulty       
+026 1043 |              LOAD secondRes         
+027 2045 |              STORE secondMulty      
+028 002B |              JNS Multiply           
+029 2041 |              STORE z                
+         |                                    	
+02A 903A |              JUMP End               
+         |                                    
+02B 0000 |  Multiply    HEX 000                
+         |                                    
+         |                                    /first loop  
+02C 1046 |  Loop        LOAD Count             
+         |                                    
+02D 3044 |              ADD firstMulty         
+02E 2046 |              STORE Count            
+         |                                    
+02F 1045 |              LOAD secondMulty       
+030 4047 |              SUBT One               
+031 2045 |              STORE secondMulty      
+032 8800 |              SKIPCOND 800           
+033 9035 |              JUMP EndFunc           
+034 902C |              JUMP Loop              
+         |                                    /store c
+         |                                     
+         |                                    /result
+035 1046 |  EndFunc     LOAD Count             
+         |                                    	
+036 C02B |              JUMPI Multiply         
+         |                                    
+037 1048 |  Zero        LOAD zero              
+038 6000 |              OUTPUT                 
+039 7000 |              HALT                   
+         |                                    	
+03A 1041 |  End         LOAD z                 
+03B 6000 |              OUTPUT                 
+03C 7000 |              HALT                   
+         |                                    	
+         |                                    
+03D 0000 |  a           DEC 0                  
+03E 0000 |  b           DEC 0                  
+03F 0000 |  c           DEC 0                  
+040 0000 |  d           DEC 0                  
+041 0000 |  z           DEC 0                  
+         |                                    
+042 0000 |  firstRes    DEC 0                  
+043 0000 |  secondRes   DEC 0                  
+044 0000 |  firstMulty  DEC 0                  
+045 0000 |  secondMulty DEC 0                  
+046 0000 |  Count       DEC 0                  
+047 0001 |  One         DEC 1                  
+048 0000 |  zero        DEC 0                  
+
+Assembly successful.
+
+         SYMBOL TABLE
+         -------------------------------------------------------
+          Symbol      | Defined | References 
+         -------------+---------+-------------------------------
+          Count       |   046   | 01B, 023, 02C, 02E, 035
+          End         |   03A   | 02A
+          EndFunc     |   035   | 033
+          Loop        |   02C   | 034
+          Multiply    |   02B   | 018, 020, 028, 036
+          One         |   047   | 030
+          Zero        |   037   | 003, 008, 00D, 012
+          a           |   03D   | 004, 014
+          b           |   03E   | 009, 016
+          c           |   03F   | 00E, 01C
+          d           |   040   | 013, 01E
+          firstMulty  |   044   | 015, 01D, 025, 02D
+          firstRes    |   042   | 019, 024
+          secondMulty |   045   | 017, 01F, 027, 02F, 031
+          secondRes   |   043   | 021, 026
+          z           |   041   | 029, 03A
+          zero        |   048   | 01A, 022, 037
+         -------------------------------------------------------
+
+

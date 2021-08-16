@@ -1,0 +1,93 @@
+/Vladyslav Luchenko
+Input
+Output
+	Skipcond 800
+	Jump    Zero
+	Store   a
+Input   
+Output
+	Skipcond 800
+	Jump    Zero
+	Store   b
+Input
+Output
+	Skipcond 800
+	Jump    Zero
+	Store   c
+Input
+Output
+	Skipcond 800
+	Jump    Zero
+	Store   d
+   
+    LOAD a
+     STORE firstMulty     
+     LOAD b
+     STORE secondMulty   
+     JNS Multiply     
+     STORE firstRes
+	  Load zero 
+	Store Count
+
+	LOAD c
+     STORE firstMulty     
+     LOAD d
+     STORE secondMulty            
+     JNS Multiply    
+     STORE secondRes
+     Load zero 
+	Store Count
+
+
+   LOAD firstRes
+     STORE firstMulty     
+     LOAD secondRes
+     STORE secondMulty            
+ JNS Multiply     
+     STORE z
+	
+   Jump    End
+
+Multiply, HEX 000
+
+/first loop  
+Loop,  Load    Count
+
+    Add     firstMulty
+    Store   Count
+
+    Load    secondMulty
+    Subt    One
+    Store   secondMulty
+    Skipcond 800
+    Jump    EndFunc
+    Jump    Loop
+/store c
+ 
+/result
+EndFunc,    Load Count	
+	
+        JumpI Multiply
+
+Zero, Load zero 
+	Output	
+	 Halt
+	
+End, Load z	
+	Output
+        Halt	
+	
+
+a,  Dec 0
+b,  Dec 0
+c,  Dec 0
+d, Dec 0
+z,   Dec 0
+
+firstRes, Dec 0
+secondRes, Dec 0
+firstMulty, Dec 0
+secondMulty, Dec 0
+Count,  Dec 0
+One,    Dec 1
+zero, Dec 0
