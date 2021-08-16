@@ -1,0 +1,9 @@
+310120211223, 23,  "Tamiya 2oz paint - ferrari red", 2.39, 5, 0.1, $10.76, 12:23:31 PM EST
+310120211225, 23,  "Tamiya 2oz paint - ferrari red", 2.39, 10, 0.15, $20.32, 12:25:41 PM EST
+310120211226, 14,  "Stanley #2 Philips Screwdriver", 6.95, 100, 0.2, $556.00, 12:26:27 PM EST
+310120211226, 23,  "Tamiya 2oz paint - ferrari red", 2.39, 25, 0.2, $47.80, 12:26:27 PM EST
+310120210122, 3451,  "Oakley Jawbreaker sunglasses", 236.0, 2, 0.0, $472.00, 13:22:25 PM EST
+310120210122, 23,  "Tamiya 2oz paint - ferrari red", 2.39, 5, 0.1, $10.76, 13:22:25 PM EST
+310120210126, 198,  "Box of 10 Sharpie Roller 0.5mm", 6.5, 5, 0.1, $29.25, 13:26:53 PM EST
+310120210126, 14909,  "1/4in - 28tpi SS nuts", 1.0, 2, 0.0, $2.00, 13:26:53 PM EST
+310120210126, 1111,  "Top Secret Twenty One - Janet Evanovich", 8.99, 11, 0.15, $84.06, 13:26:53 PM EST
