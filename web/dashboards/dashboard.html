@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navigation Bar with Toggle</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #edf1f5;
+    color: #333;
+    padding-top: 50px; /* space for fixed top nav */
+  }
+
+  .topnav {
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000; /* high z-index to ensure it's on top */
+  }
+
+  .topnav .logo {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .toggle-button {
+  margin-left:10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    background-color: #fff;
+    width: 250px;
+    position: fixed;
+    top: 50px; /* height of top nav */
+    bottom: 0;
+    left: -250px; /* hidden initially */
+    overflow-y: auto;
+    transition: 0.3s; /* smooth transition */
+    box-shadow: 3px 0 6px rgba(0,0,0,0.1);
+    padding-top: 10px;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    background-color: #f5f5f5;
+  }
+
+  .main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s;
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .sidebar { width: 200px; }
+    .sidebar a { padding: 10px 15px; }
+    .toggle-button { display: none; } /* hide toggle button on small screens */
+  }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+<div style="display:flex;">
+<div class="logo" style="padding-right: 20px;
+    width: 230px;
+    text-align: center;
+    border-right: 1px solid black;">State Street</div>
+ <span class="toggle-button" onclick="toggleMenu()">&#9776;</span>
+</div>
+
+ 
+  
+  <!-- other elements for top nav can go here -->
+</div>
+
+<div class="sidebar" id="sidebar">
+  <a href="#dashboard">Dashboard</a>
+  <a href="#analytics">Analytics</a>
+  <a href="#commerce">Commerce</a>
+  <a href="#sales">Sales</a>
+  <a href="#crm">CRM</a>
+  <!-- Add other sidebar links here -->
+</div>
+
+<div class="main-content" id="main-content">
+  <h1>Welcome to the Dashboard</h1>
+  <p>This is the enhanced main content area with a toggle sidebar.</p>
+  <!-- The rest of your main content goes here -->
+</div>
+
+<script>
+function toggleMenu() {
+  var sidebar = document.getElementById("sidebar");
+  var mainContent = document.getElementById("main-content");
+  if (sidebar.style.left === '0px') {
+    sidebar.style.left = '-250px';
+    mainContent.style.marginLeft = '0';
+  } else {
+    sidebar.style.left = '0px';
+    mainContent.style.marginLeft = '250px';
+  }
+}
+</script>
+
+</body>
+</html>
